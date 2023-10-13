@@ -1,5 +1,5 @@
-let PlanComponent = {
-    template: '#plan-template',
+let PlanPickerItemComponent = {
+    template: '#plan-picker-item-template',
     props: {
         name: {type: String, required: true },
         selected: {type: Boolean, default: false}
@@ -13,8 +13,8 @@ let PlanComponent = {
     
 }
 
-let PlanPickerComponent = {
-    components: { plan: PlanComponent },
+let PlanPickerComponent = { 
+    components: { 'plan-picker-item': PlanPickerItemComponent },
     template: '#plan-picker-template',
     data() {
         return {
