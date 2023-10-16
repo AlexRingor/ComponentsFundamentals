@@ -12,7 +12,15 @@
         <todo-item>Buy Bananas</todo-item>
         <todo-item>Buy Mango</todo-item>
         <todo-item>Buy Berries</todo-item>
-        <todo-item>Buy Apple</todo-item>
+        <todo-item>
+            Buy Apple
+            <template v-slot:description>
+                <p>Bananas are good for your Health</p>
+            </template>
+            <template #button-text>
+                Make it Nice
+            </template>
+        </todo-item>
     </div>
     
 
@@ -22,6 +30,10 @@
             <span :class="{ done }">
                 <slot></slot>
             </span>
+            <slot name="description"></slot>
+            <button>
+                <slot name="button-text">Default</slot>
+            </button>
         </div>
     </scripts>
     <style>
